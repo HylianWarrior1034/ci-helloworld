@@ -40,8 +40,6 @@ jobs:
           generate-summary: true
           generate-branches-badge: true
           fail-on-branches-decrease: true
-      - uses: actions/checkout@v3
-      - name: Upload report
         run: |
           git config --global user.name 'HylianWarrior1034'
           git config --global user.email 'dm10142@gmail.com'
