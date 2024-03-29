@@ -53,6 +53,6 @@ public class ArrayUtilsTest {
 
   @Test
   public void testCountOfNonZero() {
-    assertEquals(1, ArrayUtils.countOf(new int[]{1}, 1));
+    assertEquals(1, ArrayUtils.countOf(new int[]{1, 2, 3}, 1));
   }
 }
