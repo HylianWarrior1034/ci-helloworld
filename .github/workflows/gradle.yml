@@ -45,6 +45,7 @@ jobs:
         run: |
           git config --global user.name 'HylianWarrior1034'
           git config --global user.email 'dm10142@gmail.com'
+          git reset --hard
           git add .github/badges/coverage-summary.json
           git add .github/badges/branches.svg
           git commit -m "Automated report"
