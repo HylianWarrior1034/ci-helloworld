@@ -41,7 +41,12 @@ jobs:
           generate-summary: true
           generate-branches-badge: true
           fail-on-branches-decrease: true
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
       - name: Upload report
+        if: steps.verify_diff.outputs.changed == 'true'
         run: |
           git config --global user.name 'HylianWarrior1034'
           git config --global user.email 'dm10142@gmail.com'
