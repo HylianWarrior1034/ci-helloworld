@@ -45,15 +45,9 @@ jobs:
         id: verify_diff
         run: |
           git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
-      - name: Upload report
-        if: steps.verify_diff.outputs.changed == 'true'
-        run: |
-          git config --global user.name 'HylianWarrior1034'
-          git config --global user.email 'dm10142@gmail.com'
-          git reset --hard
-          git add .
-          git commit -m "Automated report"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Automated Change
 
   build_and_publish_docker_image:
     name: Publish to Docker Hub
